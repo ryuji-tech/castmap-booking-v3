@@ -1,0 +1,118 @@
+/* CastMap 案件管理 — 共通スタイル */
+* { box-sizing: border-box; }
+body {
+  font-family: "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  background: #f4f7fb; color: #1f2937; margin: 0; padding: 0 0 40px;
+}
+header {
+  background: #fff; border-bottom: 1px solid #e5e7eb;
+  padding: 16px 24px; display: flex; align-items: center; gap: 14px;
+}
+header .logo { font-weight: 800; font-size: 20px; }
+header .logo .pin {
+  display: inline-block; width: 20px; height: 20px; vertical-align: -3px;
+  border-radius: 50% 50% 50% 2px; transform: rotate(-45deg);
+  background: linear-gradient(135deg,#5b8def,#8b5cf6,#22c55e);
+}
+header nav { margin-left: auto; display: flex; gap: 10px; }
+header nav a { font-size: 14px; color: #2563eb; text-decoration: none; padding: 8px 14px; border-radius: 8px; }
+header nav a:hover { background: #eff4ff; }
+
+.wrap { max-width: 920px; margin: 24px auto; padding: 0 20px; }
+.wrap.narrow { max-width: 420px; }
+
+/* ヘッダのログインユーザー表示・ログアウト */
+header nav .who { font-size: 13px; color: #6b7280; padding: 8px 4px; align-self: center; }
+header nav a.logout { color: #64748b; }
+header nav a.logout:hover { background: #f1f5f9; color: #ef4444; }
+h1 { font-size: 20px; margin: 0 0 18px; }
+
+/* フォーム */
+.card { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 24px; }
+.field { margin-bottom: 16px; }
+.field label { display: block; font-size: 13px; font-weight: 700; color: #374151; margin-bottom: 6px; }
+.field .req { color: #ef4444; font-size: 12px; }
+input[type=text], input[type=datetime-local], select, textarea {
+  width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 9px;
+  font-size: 14px; font-family: inherit; background: #fff;
+}
+textarea { resize: vertical; min-height: 70px; }
+.row { display: flex; gap: 14px; }
+.row .field { flex: 1; }
+.btn {
+  display: inline-block; border: 0; background: #2563eb; color: #fff;
+  padding: 11px 22px; border-radius: 9px; font-size: 15px; font-weight: 700;
+  cursor: pointer; text-decoration: none;
+}
+.btn:hover { background: #1d4ed8; }
+.btn.sub { background: #f1f5f9; color: #475569; }
+
+/* 一覧テーブル */
+.toolbar { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.toolbar input { max-width: 280px; }
+table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 14px; overflow: hidden; border: 1px solid #e5e7eb; }
+th, td { text-align: left; padding: 12px 14px; font-size: 14px; border-bottom: 1px solid #eef1f5; }
+th { background: #f8fafc; color: #6b7280; font-size: 12.5px; }
+tr:last-child td { border-bottom: 0; }
+
+/* ステータスのバッジ（statusコード st-1..st-4 に対応） */
+.badge { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+.badge.st-3 { background: #e8efff; color: #2563eb; }                                   /* 確定 */
+.badge.st-2 { background: #fef3e2; color: #c2750a; }                                   /* 仮 */
+.badge.st-1 { background: #eef1f4; color: #6b7280; border: 1px dashed #c4cad2; }       /* 打診中 */
+.badge.st-4 { background: #eceef0; color: #9aa1ab; }                                   /* 完了 */
+
+/* 種別タグ */
+.cat { font-size: 12px; color: #64748b; background: #f1f5f9; padding: 2px 9px; border-radius: 6px; white-space: nowrap; }
+
+.empty { text-align: center; color: #9aa3ad; padding: 40px; }
+.msg { background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; border-radius: 9px; padding: 12px 14px; margin-bottom: 16px; font-size: 14px; }
+.msg.ok { background: #ecfdf5; color: #047857; border-color: #a7f3d0; }
+.muted { color: #9aa3ad; font-size: 13px; }
+
+/* ステータス絞り込みタブ */
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.tab {
+  display: inline-flex; align-items: center; gap: 7px; text-decoration: none;
+  font-size: 13px; font-weight: 700; color: #64748b;
+  background: #fff; border: 1px solid #e5e7eb; padding: 7px 14px; border-radius: 999px;
+}
+.tab:hover { background: #f8fafc; }
+.tab.on { background: #2563eb; color: #fff; border-color: #2563eb; }
+.tab .cnt {
+  font-size: 11px; font-weight: 800; background: #eef2f7; color: #64748b;
+  padding: 1px 8px; border-radius: 999px; min-width: 20px; text-align: center;
+}
+.tab.on .cnt { background: rgba(255,255,255,.25); color: #fff; }
+
+/* 一覧の操作ボタン（編集・削除） */
+.ta-r { text-align: right; }
+.nowrap { white-space: nowrap; }
+.del-form { display: inline; margin: 0; }
+.act {
+  display: inline-block; font-size: 12.5px; font-weight: 700; text-decoration: none;
+  padding: 6px 12px; border-radius: 8px; border: 1px solid transparent; cursor: pointer;
+}
+.act.edit { color: #2563eb; background: #eff4ff; }
+.act.edit:hover { background: #dbe7ff; }
+.act.del { color: #dc2626; background: #fef2f2; margin-left: 6px; font-family: inherit; }
+.act.del:hover { background: #fde0e0; }
+
+.btn.danger { background: #dc2626; }
+.btn.danger:hover { background: #b91c1c; }
+
+/* 削除確認モーダル */
+.modal-bg {
+  display: none; position: fixed; inset: 0; background: rgba(15,23,42,.45);
+  align-items: center; justify-content: center; padding: 20px; z-index: 50;
+}
+.modal-bg.show { display: flex; }
+.modal {
+  background: #fff; border-radius: 16px; padding: 26px; max-width: 380px; width: 100%;
+  box-shadow: 0 20px 50px rgba(0,0,0,.2); text-align: center;
+}
+.modal h3 { margin: 0 0 10px; font-size: 18px; }
+.modal-target { font-weight: 700; margin: 0 0 4px; word-break: break-all; }
+.modal-note { color: #9aa3ad; font-size: 13px; margin: 0 0 20px; }
+.modal-actions { display: flex; gap: 10px; justify-content: center; }
+.modal-actions .btn { flex: 1; text-align: center; }

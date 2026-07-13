@@ -1,0 +1,10 @@
+# 秘密情報（DBパスワードなど）が入るファイルはGitHubに上げない
+config.php
+
+# サーバ情報（ホスト名・DB名など）を含む手順書は公開しない
+DEPLOY.md
+
+# OS/エディタが作る不要ファイル
+.DS_Store
+Thumbs.db
+*.log
