@@ -5,6 +5,7 @@
 
 - GitHub: `castmap-booking-v3`（`castmap-booking-v2` の続編）
 - 公開URL(v3): https://prema.sakura.ne.jp/booking_app_v3/login.php
+- ※2026.10 php脆弱性対応のため公開停止
 - 使用技術: PHP / MySQL(MariaDB) / HTML / CSS / JavaScript
 
 ## （1）タイトル
